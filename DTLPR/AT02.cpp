@@ -1,28 +1,30 @@
-#include <iostream>   // Biblioteca para entrada e saída (cout, cin, etc.)
-#include <string.h>   // Biblioteca para manipulação de strings (não é usada aqui, pode remover)
-#include <iomanip>    // Biblioteca para formatação (corrigido, estava escrito errado "<inmanip>")
-using namespace std;  // Permite usar cout, cin, endl sem precisar escrever std:: antes
+#include <iostream>
 
-int main(){
-    // Mensagem inicial
-    cout << "Digite as alturas entre 150 e 220 cm." << endl;
+using namespace std;
 
-    // Aqui falta declarar as variáveis altura1, altura2, altura3
-    // Além disso, o operador de entrada correto é separado (>>), não por vírgula
-    int altura1, altura2, altura3;
-    cin >> altura1 >> altura2 >> altura3;
+int main() {
+    int alturaA, alturaB, alturaC;
 
-    // Verifica se altura1 está entre as duas outras (valor intermediário)
-    if ( (altura1 > altura2 && altura1 < altura3) || (altura1 < altura2 && altura1 > altura3) ){
-        cout << "A altura do gatti é: " << altura1;
+    cout << "Digite tres alturas entre 150 e 220 cm:\n";
+    cin >> alturaA >> alturaB >> alturaC;
+
+    if (alturaA < 150 || alturaA > 220 ||
+        alturaB < 150 || alturaB > 220 ||
+        alturaC < 150 || alturaC > 220) {
+
+        cout << "Valores invalidos.\n";
+        return 1;
     }
-    // Verifica se altura2 é o valor intermediário
-    else if ( (altura2 > altura1 && altura2 < altura3) || (altura2 < altura1 && altura2 > altura3) ){
-        cout << "A altura do gatti é: " << altura2;
+
+    if ((alturaA > alturaB && alturaA < alturaC) || (alturaA < alturaB && alturaA > alturaC)) {
+        cout << "A altura intermediaria e: " << alturaA << " cm\n";
     }
-    // Se não for nenhum dos dois, então altura3 é o intermediário
+    else if ((alturaB > alturaA && alturaB < alturaC) || (alturaB < alturaA && alturaB > alturaC)) {
+        cout << "A altura intermediaria e: " << alturaB << " cm\n";
+    }
     else {
-        cout << "A altura do gatti é: " << altura3;
+        cout << "A altura intermediaria e: " << alturaC << " cm\n";
     }
-}
 
+    return 0;
+}
