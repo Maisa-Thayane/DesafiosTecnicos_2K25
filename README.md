@@ -50,4 +50,5 @@ Este repositório tem caráter **educacional**. Ele não busca apresentar soluç
 ## Autora
 
 **Maísa Thayane dos Santos**
+
 Estudante de Desenvolvimento de Software e Técnica em Eletrônica
